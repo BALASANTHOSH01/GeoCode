@@ -1,6 +1,6 @@
 {
   "name": "@balasanthosh01/geocodejs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Universal geocoding library with country data, phone formatting, and flag utilities for JavaScript/TypeScript",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
