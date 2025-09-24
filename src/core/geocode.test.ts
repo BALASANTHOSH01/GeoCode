@@ -1,6 +1,6 @@
 // geocode.test.ts
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { Geocode } from './geocode';
+import { GeoLookup } from './geocode';
 
 // Mock fetch globally for all tests
 globalThis.fetch = vi.fn();
@@ -9,20 +9,20 @@ globalThis.fetch = vi.fn();
 console.warn = vi.fn();
 
 describe('Geocode', () => {
-  let geocode: Geocode;
+  let geocode: GeoLookup;
   
   // Example country code and name for testing
   const testCode = 'US';
   const testName = 'United States';
 
   beforeEach(() => {
-    geocode = new Geocode();
+    geocode = new GeoLookup();
     vi.clearAllMocks();
   });
 
   describe('Basic instantiation and core methods', () => {
     it('should create an instance', () => {
-      expect(geocode).toBeInstanceOf(Geocode);
+      expect(geocode).toBeInstanceOf(GeoLookup);
     });
 
     it('should get country data by ISO code', () => {
@@ -265,8 +265,8 @@ describe('Geocode', () => {
         flagBasePath: 'https://custom-flags.com/',
         fallbackCountry: 'GB'
       };
-      const customGeocode = new Geocode(customConfig);
-      expect(customGeocode).toBeInstanceOf(Geocode);
+      const customGeocode = new GeoLookup(customConfig);
+      expect(customGeocode).toBeInstanceOf(GeoLookup);
       
       const flagUrl = customGeocode.getFlagUrl('US');
       expect(flagUrl).toContain('custom-flags.com');
@@ -293,10 +293,10 @@ describe('Geocode', () => {
 
 // Additional test for edge cases
 describe('Geocode Edge Cases', () => {
-  let geocode: Geocode;
+  let geocode: GeoLookup;
 
   beforeEach(() => {
-    geocode = new Geocode();
+    geocode = new GeoLookup();
   });
 
   it('should handle empty or null search queries', () => {
