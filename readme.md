@@ -1,8 +1,8 @@
-# @balasanthosh01/geolookup
+# @balasanthosh01/geocodejs
 
 Universal geocoding library for JavaScript/TypeScript with country data, phone formatting, and flag utilities.
 
-[![npm version](https://img.shields.io/npm/v/@balasanthosh01/geolookup.svg)](https://www.npmjs.com/package/@balasanthosh01/geolookup)
+[![npm version](https://img.shields.io/npm/v/@balasanthosh01/geocodejs.svg)](https://www.npmjs.com/package/@balasanthosh01/geocodejs)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
@@ -23,6 +23,6 @@ Universal geocoding library for JavaScript/TypeScript with country data, phone f
 ## Installation
 
 ```bash
-npm install @balasanthosh01/geolookup
+npm install @balasanthosh01/geocodejs
 # or
-yarn add @balasanthosh01/geolookup
+yarn add @balasanthosh01/geocodejs
