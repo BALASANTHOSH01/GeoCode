@@ -2,30 +2,32 @@
   "name": "geocode",
   "version": "1.0.0",
   "description": "Universal geocoding library with country data, phone formatting, and flag utilities for JavaScript/TypeScript",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
-  "type": "module",
   "exports": {
     ".": {
       "import": "./dist/index.esm.js",
-      "require": "./dist/index.cjs.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.cjs.js"
     },
     "./react": {
       "import": "./dist/adapters/react.esm.js",
-      "require": "./dist/adapters/react.cjs.js",
-      "types": "./dist/adapters/react.d.ts"
+      "require": "./dist/adapters/react.cjs.js"
     },
     "./vue": {
       "import": "./dist/adapters/vue.esm.js",
-      "require": "./dist/adapters/vue.cjs.js",
-      "types": "./dist/adapters/vue.d.ts"
+      "require": "./dist/adapters/vue.cjs.js"
     },
     "./angular": {
       "import": "./dist/adapters/angular.esm.js",
-      "require": "./dist/adapters/angular.cjs.js",
-      "types": "./dist/adapters/angular.d.ts"
+      "require": "./dist/adapters/angular.cjs.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "react": ["dist/adapters/react.d.ts"],
+      "vue": ["dist/adapters/vue.d.ts"],
+      "angular": ["dist/adapters/angular.d.ts"]
     }
   },
   "files": [
@@ -45,20 +47,20 @@
     "typescript",
     "geolocation"
   ],
-  "author": "Your Name <your.email@example.com>",
+  "author": "Balasanthosh",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/geocode-utils.git"
+    "url": "git+https://github.com/BALASANTHOSH01/GeoCode.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/geocode-utils/issues"
+    "url": "https://github.com/BALASANTHOSH01/GeoCode/issues"
   },
-  "homepage": "https://github.com/yourusername/geocode-utils#readme",
+  "homepage": "https://github.com/BALASANTHOSH01/GeoCode#readme",
   "scripts": {
     "dev": "vite",
     "build": "npm run clean && npm run build:lib",
-    "build:lib": "vite build --mode lib",
+    "build:lib": "vite build",
     "clean": "rimraf dist",
     "test": "vitest",
     "test:coverage": "vitest --coverage",
@@ -67,11 +69,11 @@
     "preview": "vite preview"
   },
   "peerDependencies": {
-    "react": ">=16.8.0",
-    "vue": ">=3.0.0",
-    "@angular/core": ">=12.0.0",
     "@angular/common": ">=12.0.0",
-    "rxjs": ">=7.0.0"
+    "@angular/core": ">=12.0.0",
+    "react": ">=16.8.0",
+    "rxjs": ">=7.0.0",
+    "vue": ">=3.0.0"
   },
   "peerDependenciesMeta": {
     "react": {
@@ -91,18 +93,18 @@
     }
   },
   "devDependencies": {
-    "@types/react": "^19.1.13",
     "@angular/common": "^20.3.1",
     "@angular/core": "^20.3.1",
     "@angular/platform-browser": "^20.3.1",
+    "@types/react": "^19.1.13",
+    "@vitest/coverage-v8": "^1.6.1",
     "react": "^19.1.1",
+    "rimraf": "^5.0.10",
     "rxjs": "^7.8.2",
-    "vue": "^3.5.21",
     "typescript": "~5.8.3",
     "vite": "^7.1.7",
-    "vite-plugin-dts": "^4.3.0",
+    "vite-plugin-dts": "^4.5.4",
     "vitest": "^1.0.0",
-    "rimraf": "^5.0.0",
-    "@vitest/coverage-v8": "^1.0.0"
+    "vue": "^3.5.21"
   }
 }
