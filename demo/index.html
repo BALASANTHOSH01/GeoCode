@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geolookup Demo</title>
+</head>
+
+<body>
+  <h1>Geolookup Demo</h1>
+  <pre id="output">Loading...</pre>
+
+  <!-- Load your library from unpkg CDN -->
+  <script type="module">
+    import { geocode } from 'https://unpkg.com/@balasanthosh01/geolookup?module';
+
+    async function runDemo() {
+      try {
+        // Search for countries
+        const countries = geocode.searchCountries("India");
+
+        // Display results
+        document.getElementById("output").textContent = JSON.stringify(countries, null, 2);
+
+        // Example: get country with flag
+        const countryWithFlag = await geocode.getCountryWithFlag("IN");
+        console.log(countryWithFlag);
+      } catch (err) {
+        document.getElementById("output").textContent = 'Error: ' + err.message;
+        console.error(err);
+      }
+    }
+
+    runDemo();
+  </script>
+</body>
+</html>

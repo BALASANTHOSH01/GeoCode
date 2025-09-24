@@ -1,7 +1,7 @@
 import { ALTERNATIVE_NAMES, COUNTRY_DATA, PHONE_FORMATS } from "../data/countries";
 import type { CountryData, CountryWithFlag, GeocodeConfig, PhoneNumberFormat, SearchOptions } from "../types";
 
-export class Geocode {
+export class GeoLookup {
   private config: GeocodeConfig;
   private flagCache = new Map<string, string>();
   private phoneCodeMap = new Map<string, CountryData[]>();
