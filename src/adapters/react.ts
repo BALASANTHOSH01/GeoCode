@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
-import { Geocode } from '../core/geocode';
+import { GeoLookup } from '../core/geocode';
 import type { CountryData, GeocodeConfig, SearchOptions } from '../types';
 
 export const useGeocode = (config?: GeocodeConfig) => {
-  const geocodeInstance = useMemo(() => new Geocode(config), [config]);
+  const geocodeInstance = useMemo(() => new GeoLookup(config), [config]);
   
   return useMemo(() => ({
     getAllCountries: () => geocodeInstance.getAllCountries(),

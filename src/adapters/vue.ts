@@ -1,9 +1,9 @@
 import { computed } from 'vue';
-import { Geocode } from '../core/geocode';
+import { GeoLookup } from '../core/geocode';
 import type { CountryData, GeocodeConfig, SearchOptions } from '../types';
 
 export const useGeocode = (config?: GeocodeConfig) => {
-  const geocodeInstance = computed(() => new Geocode(config));
+  const geocodeInstance = computed(() => new GeoLookup(config));
   
   return {
     getAllCountries: () => geocodeInstance.value.getAllCountries(),

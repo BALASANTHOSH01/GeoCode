@@ -3,7 +3,7 @@ import { Observable, from, BehaviorSubject } from "rxjs";
 import { map } from "rxjs/operators";
 import { DomSanitizer } from "@angular/platform-browser";
 import type { SafeHtml } from "@angular/platform-browser";
-import { Geocode } from "../core/geocode";
+import { GeoLookup } from "../core/geocode";
 import type {
   CountryData,
   CountryWithFlag,
@@ -19,7 +19,7 @@ export interface AngularCountryWithFlag extends CountryWithFlag {
   providedIn: "root",
 })
 export class GeocodeService {
-  private geocode: Geocode;
+  private geocode: GeoLookup;
   private currentUserCountry = new BehaviorSubject<CountryData | null>(null);
   public currentUserCountry$ = this.currentUserCountry.asObservable();
 
@@ -27,7 +27,7 @@ export class GeocodeService {
 
   constructor(sanitizer: DomSanitizer, config?: GeocodeConfig) {
     this.sanitizer = sanitizer;
-    this.geocode = new Geocode(config);
+    this.geocode = new GeoLookup(config);
     this.initUserCountryDetection();
   }
 
